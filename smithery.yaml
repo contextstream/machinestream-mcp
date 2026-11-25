@@ -1,0 +1,27 @@
+# Smithery configuration: how to start the server over stdio.
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      apiKey:
+        type: string
+        title: API key
+        description: API key of your MachineStream (ContextStream) account. Leave empty to sign in with the setup tool.
+      localFallback:
+        type: boolean
+        title: Local fallback
+        default: false
+        description: Let the server run a command on its own machine when the service does not run it remotely.
+  commandFunction: |-
+    (config) => ({
+      command: 'machinestream-mcp',
+      args: [],
+      env: {
+        ...(config.apiKey ? { MACHINESTREAM_API_KEY: config.apiKey } : {}),
+        ...(config.localFallback ? { MACHINESTREAM_LOCAL_FALLBACK: '1' } : {}),
+      },
+    })
+build:
+  dockerfile: Dockerfile
+  dockerBuildPath: .

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.contextstream/machinestream-mcp",
+  "title": "MachineStream",
+  "description": "Remote builds, tests, lints and type checks for AI coding agents, on your exact checkout.",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/contextstream/machinestream-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://machinestream.io",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/contextstream/machinestream-mcp/main/assets/machinestream-icon.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "1024x1024"
+      ]
+    }
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "@contextstream/machinestream-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "MACHINESTREAM_API_KEY",
+          "description": "API key of your MachineStream (ContextStream) account. Optional: without it, sign in with the setup tool or `machinestream-mcp login`.",
+          "isRequired": false,
+          "isSecret": true
+        },
+        {
+          "name": "MACHINESTREAM_API_URL",
+          "description": "API base URL.",
+          "isRequired": false,
+          "default": "https://api.contextstream.io"
+        },
+        {
+          "name": "MACHINESTREAM_ROOT",
+          "description": "The git checkout checks are about, for clients that do not start the server in the project folder.",
+          "isRequired": false
+        },
+        {
+          "name": "MACHINESTREAM_LOCAL_FALLBACK",
+          "description": "Set to 1 to let the server run a command on this machine itself when the service does not run it remotely. Off by default.",
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

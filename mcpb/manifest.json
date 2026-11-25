@@ -1,0 +1,93 @@
+{
+  "manifest_version": "0.3",
+  "name": "machinestream-mcp",
+  "display_name": "MachineStream",
+  "version": "0.1.0",
+  "description": "Run builds, tests, lints and type checks remotely, on the exact state of your checkout.",
+  "long_description": "MachineStream runs an AI coding agent's tests, type checks, linters and builds remotely, on the exact state of your checkout (committed, uncommitted and untracked files), and returns the same exit code and output a local run gives. This extension adds five tools: `check` runs one command, `check_parallel` runs several against one snapshot, `status` says whether checks are ready and what they cost, `setup` signs you in and turns checks on when you agree, and `run_output` reads a saved run. When the service cannot run a command it says so, and the command runs on your machine as before. Checks are billed in Context Credits by run time; see https://machinestream.io/pricing.",
+  "author": {
+    "name": "ContextStream",
+    "url": "https://contextstream.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/contextstream/machinestream-mcp.git"
+  },
+  "homepage": "https://machinestream.io",
+  "documentation": "https://machinestream.io/docs",
+  "support": "https://github.com/contextstream/machinestream-mcp/issues",
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "npm/bin/machinestream-mcp.mjs",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/npm/bin/machinestream-mcp.mjs"
+      ],
+      "env": {
+        "MACHINESTREAM_ROOT": "${user_config.project_directory}",
+        "MACHINESTREAM_API_KEY": "${user_config.api_key}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "check",
+      "description": "Run one build, test, lint or type-check command remotely on this checkout."
+    },
+    {
+      "name": "check_parallel",
+      "description": "Run 2 to 8 commands at once against one snapshot of the checkout."
+    },
+    {
+      "name": "status",
+      "description": "Say whether remote checks are ready here and what they cost."
+    },
+    {
+      "name": "setup",
+      "description": "Sign in, and turn remote checks on when the user agrees."
+    },
+    {
+      "name": "run_output",
+      "description": "Read the saved output of an earlier check without running it again."
+    }
+  ],
+  "tools_generated": true,
+  "prompts_generated": true,
+  "keywords": [
+    "testing",
+    "ci",
+    "build",
+    "lint",
+    "type-check",
+    "remote",
+    "agents"
+  ],
+  "license": "MIT",
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "win32",
+      "linux"
+    ],
+    "runtimes": {
+      "node": ">=20.0.0"
+    }
+  },
+  "user_config": {
+    "project_directory": {
+      "type": "directory",
+      "title": "Project folder",
+      "description": "The git checkout your checks are about.",
+      "required": true
+    },
+    "api_key": {
+      "type": "string",
+      "title": "API key (optional)",
+      "description": "API key of your MachineStream (ContextStream) account. Leave empty to sign in through the browser with the setup tool.",
+      "sensitive": true,
+      "required": false
+    }
+  }
+}

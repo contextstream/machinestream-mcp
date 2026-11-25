@@ -1,0 +1,52 @@
+{
+  "name": "@contextstream/machinestream-mcp",
+  "mcpName": "io.github.contextstream/machinestream-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for MachineStream: remote builds, tests, lints and type checks for AI coding agents",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "machinestream-mcp": "npm/bin/machinestream-mcp.mjs"
+  },
+  "files": [
+    "npm/bin",
+    "npm/launcher.mjs",
+    "README.md",
+    "LICENSE",
+    "server.json"
+  ],
+  "scripts": {
+    "test": "node --test npm/test/*.test.mjs",
+    "pack:check": "npm pack --dry-run"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/contextstream/machinestream-mcp.git"
+  },
+  "homepage": "https://machinestream.io",
+  "bugs": {
+    "url": "https://github.com/contextstream/machinestream-mcp/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mcp-server",
+    "machinestream",
+    "testing",
+    "ci",
+    "remote-build",
+    "type-check",
+    "lint",
+    "ai-coding",
+    "claude-code",
+    "cursor",
+    "codex"
+  ]
+}
