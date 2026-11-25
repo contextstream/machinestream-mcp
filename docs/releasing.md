@@ -18,6 +18,7 @@ Nothing here runs by itself.
    ```
 
    The install scripts download from `releases/latest/download/`, so a published release is what `curl -fsSL https://machinestream.io/install.sh | sh` installs from then on. Install it that way once and run `machinestream-mcp --version`. The site serves copies of `install.sh` and `install.ps1` from this repository: update them there when they change here.
-5. Optional, when the npm package is wanted: publish it (`npm publish`), then the registry entry (`mcp-publisher publish`, which reads `server.json`), and check `npx -y @contextstream/machinestream-mcp@X.Y.Z --version`. The launcher downloads from `releases/download/vX.Y.Z/`, so the release must be public first.
+5. Optional: pack the Claude Desktop bundle with `scripts/release/bundle.sh` and add it to the release (`gh release upload vX.Y.Z dist/machinestream-mcp.mcpb`). Its launcher downloads the binary from the release, so do this after step 4.
+6. Optional, when the npm package is wanted: publish it (`npm publish`), then the registry entry (`mcp-publisher publish`, which reads `server.json`), and check `npx -y @contextstream/machinestream-mcp@X.Y.Z --version`. The launcher downloads from `releases/download/vX.Y.Z/`, so the release must be public first.
 
 To move to a newer engine, change the tag of the four `mcp-*` git dependencies in `Cargo.toml`, run `cargo update -p mcp-client -p mcp-tools -p mcp-session -p mcp-types`, and repeat step 2.
