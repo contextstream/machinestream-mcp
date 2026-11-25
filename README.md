@@ -1,9 +1,9 @@
 <p align="center">
   <a href="https://machinestream.io">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="assets/machinestream-lockup-dark.png">
-      <source media="(prefers-color-scheme: light)" srcset="assets/machinestream-lockup-light.png">
-      <img src="assets/machinestream-lockup-light.png" alt="MachineStream" width="420">
+      <source media="(prefers-color-scheme: dark)" srcset="assets/machinestream-logo-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="assets/machinestream-logo-light.svg">
+      <img src="assets/machinestream-logo-light.svg" alt="MachineStream by ContextStream" width="300">
     </picture>
   </a>
 </p>
@@ -14,9 +14,9 @@
 </p>
 
 <p align="center">
-  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-0b0b0c?style=flat-square"></a>
-  <a href="https://github.com/contextstream/machinestream-mcp/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/contextstream/machinestream-mcp?style=flat-square&label=release&color=2563eb"></a>
-  <img alt="Platforms: macOS, Linux and Windows" src="https://img.shields.io/badge/platforms-macOS%20%C2%B7%20Linux%20%C2%B7%20Windows-0b0b0c?style=flat-square">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-15212a?style=flat-square"></a>
+  <a href="https://github.com/contextstream/machinestream-mcp/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/contextstream/machinestream-mcp?style=flat-square&label=release&color=0f859d"></a>
+  <img alt="Platforms: macOS, Linux and Windows" src="https://img.shields.io/badge/platforms-macOS%20%C2%B7%20Linux%20%C2%B7%20Windows-15212a?style=flat-square">
 </p>
 
 <br>
